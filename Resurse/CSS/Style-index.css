@@ -1,0 +1,461 @@
+
+
+
+/* Reset CSS pentru a elimina stilurile implicite ale browserului */
+:root {
+    --text-padding: 20px;
+}
+header, 
+nav ul, 
+main, 
+section, 
+article, 
+blockquote, 
+ul, 
+aside, 
+footer {
+    padding: var(--text-padding);
+}
+
+.media {
+    width: 100%;       /* Lățimea implicită este de 100% din părinte */
+    max-width: 1200px; /* Lățimea maximă pe care media o poate avea */
+    min-width: 300px;  /* Lățimea minimă pe care media o poate avea */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #000000;
+}
+
+header {
+    background-color: #940000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px 15px 0 0;
+}
+
+
+header h1 span {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 15px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+blockquote {
+    padding-left: 20px;
+    border-left: 4px solid #940000;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+aside {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+aside h3 {
+    margin-bottom: 15px;
+}
+
+aside form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="email"] {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #940000;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #740000;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);;
+}
+
+footer address a {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+footer address a:hover {
+    text-decoration: underline;
+}
+
+.fa-solid {
+    margin-right: 5px;
+}
+
+h1, h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;  /* Aici setăm greutatea pentru bold */
+    color: black;     /* Setăm culoarea la negru */
+}
+
+/* Stilizarea secțiunii */
+#cursuri-blacksmith {
+    width: 80%; /* latimea secțiunii este de 80% din lățimea totală a părintelui său */
+    margin: 40px auto; /* centrat pe orizontală și 40px spațiu deasupra și dedesubt */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2); /* o mică umbră pentru efect 3D */
+    background-color: #f7f7f7; /* un fundal de culoare deschisă */
+    border-radius: 10px; /* colțurile rotunjite */
+}
+
+/* Stilizarea titlului */
+#cursuri-blacksmith h2 {
+    text-align: center; /* titlul centrat */
+    color: #333; /* culoarea textului */
+    padding-bottom: 20px; /* spațiu sub titlu */
+}
+
+/* Stilizarea tabelului */
+#cursuri-blacksmith table {
+    width: 100%; /* tabelul să ocupe toată lățimea secțiunii */
+    border-collapse: collapse; /* îmbină granițele celulelor */
+}
+
+#cursuri-blacksmith th,
+#cursuri-blacksmith td {
+    padding: 10px; /* spațiu în interiorul celulelor tabelului */
+    text-align: center; /* textul centrat în celule */
+    border: 1px solid #ddd; /* o graniță subtilă pentru celule */
+}
+
+#cursuri-blacksmith th {
+    background-color: #555; /* fundal de culoare închisă pentru antetul tabelului */
+    color: white; /* culoarea textului alb pentru antet */
+}
+
+#cursuri-blacksmith tbody tr:nth-child(odd) {
+    background-color: #eee; /* o culoare deschisă pentru rândurile impare ale tabelului pentru vizibilitate */
+}
+
+/* Stilizarea footer-ului */
+#cursuri-blacksmith footer {
+    margin-top: 20px; /* spațiu deasupra footer-ului */
+    font-style: italic; /* text italic pentru o notă */
+}
+.table-container {
+    max-height: 300px;
+    overflow: auto;
+    border: 1px solid #ccc;  /* Opțional: pentru a avea un contur în jurul tabelului */
+    margin-bottom: 20px;    /* O mica distantare intre tabel si footer */
+}
+
+table {
+    width: 100%;  /* Acest lucru va face ca tabelul să ocupe întreaga lățime a div-ului */
+    border-collapse: collapse;  /* Pentru a reduce distanța dintre celule și pentru a avea borduri mai frumoase */
+}
+
+table th, table td {
+    padding: 8px 12px;  /* Un mic padding pentru a face tabelul mai lizibil */
+    border: 1px solid #ccc;  /* Bordura pentru fiecare celulă */
+}
+
+table thead th {
+    background-color: #f5f5f5;  /* Un fundal mai deschis pentru antetul tabelului */
+}
+.taburi-iframe a {
+    display: inline-block;
+    width: 200px; 
+    height: 40px; 
+    line-height: 40px;
+    text-align: center; 
+    background-color: #007BFF; 
+    color: white; 
+    border: 1px solid #0056b3; 
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.taburi-iframe a:hover {
+    background-color: #0056b3;
+}
+.taburi-iframe {
+    display: flex;
+    gap: 10px;
+}
+
+div {
+    display: block;
+}
+
+#link-top {position: fixed;
+bottom: 0.3em;
+opacity: 0.5;
+left: 0.3em;
+width: 3rem;
+box-sizing: border-box;
+height: 3rem;
+line-height: 3rem;
+text-align: center;
+border: 5px solid grey;
+border-top-color: red;
+border-radius: 50%;
+background: rgb(220,220,220);}
+
+#triunghi {
+    height: 0px;
+    width: 0;
+    display: inline-block;
+    border-bottom: 1.5rem solid grey;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    vertical-align: top;
+    transform: translateY(30%);
+}
+* {
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
+}
+
+.cercuri li {
+    display: inline-block;
+}
+.suprafata {
+    color: red;
+    font-weight: bold;
+}
+
+.baza {
+    color: blue;
+    font-style: italic;
+}
+
+.inaltime {
+    color: green;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* exemplu pentru 4 coloane */
+    grid-gap: 30px;  /* spațierea implicată între celule */
+}
+@media (max-width: 768px) {  /* exemplu pentru ecrane cu lățimea maximă de 768px */
+    .container {
+        grid-gap: 20px;  /* spațiere redusă pentru ecrane medii */
+    }
+}
+@media (max-width: 480px) {  /* exemplu pentru ecrane cu lățimea maximă de 480px */
+    .container {
+        grid-gap: 10px;  /* spațiere redusă pentru ecrane mici */
+    }
+}
+figure {
+    max-width: 100%; /* Asigură-te că figura nu se extinde peste containerul părinte */
+    overflow: hidden; /* Orice conținut care depășește va fi ascuns */
+}
+
+figure img {
+    width: 100%; /* Lățimea imaginii va fi setată la 100% din lățimea figurei */
+    height: auto; /* Înălțimea va fi calculată automat în funcție de proporția originală a imaginii */
+    display: block; /* Elimină orice spațiu de sub imagine */
+}
+
+nav ul {
+    list-style-type: none;      /* elimină bulinele de la listă */
+    padding: 0;                 /* elimină padding-ul implicit */
+    display: flex;              /* aliniază elementele orizontal */
+    justify-content: space-around; /* distribuie spațiul între linkuri */
+}
+
+nav a {
+    text-decoration: none;    /* elimină sublinierea */
+    padding: 10px 20px;       /* spațiere în interiorul linkurilor */
+    color: #333;              /* culoarea textului linkurilor */
+    border-radius: 5px;       /* colțuri rotunjite */
+    transition: background-color 0.3s; /* tranzitie la schimbare culorii de fundal */
+    display: flex;            /* permite alinierea iconiței și textului */
+    align-items: center;      /* aliniază vertical iconița și textul */
+}
+
+nav a i {
+    margin-right: 10px;       /* spațiere între iconiță și text */
+}
+
+nav a:hover {
+    background-color: #f5f5f5; /* culoarea de fundal atunci când cursorul este deasupra */
+}
+
+@media print {
+    /* Ascunde meniul navigațional și alte elemente non-esențiale */
+    nav, .footer, .ads, .non-essential, #Despre-Cutite, #link-top {
+        display: none;
+    }
+
+    /* Setează fundalul pe alb și textul pe negru */
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    /* Elimină marginile */
+    body, article, section {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Alte stiluri personalizate pentru printare pot fi adăugate aici */
+}
+@media print and (orientation: portrait) {
+    img {
+        max-width: 100%;
+        page-break-inside: avoid; /* Evită să se rupă o imagine între două pagini */
+    }
+}
+
+@media print and (orientation: landscape) {
+    img {
+        max-width: 100%;
+        page-break-inside: avoid; /* Evită să se rupă o imagine între două pagini */
+    }
+}
+.menu-icon {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bar {
+    background: #000;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+}
+
+.bar:nth-child(1) {
+    top: 0;
+}
+
+.bar:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar:nth-child(3) {
+    bottom: 0;
+}
+
+@keyframes barAnimation {
+    0% {
+        background: #250363;
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    50% {
+        background: #250363;
+        transform: translateY(5px) rotate(20deg);
+        opacity: 0.8;
+    }
+    100% {
+        background: #250363;
+        transform: translateY(10px) rotate(40deg);
+        opacity: 0.6;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-icon .bar:nth-child(1) {
+        animation: barAnimation 0.5s 0.3s forwards;
+    }
+    .menu-icon .bar:nth-child(2) {
+        animation: barAnimation 0.5s 0.4s forwards;
+    }
+    .menu-icon .bar:nth-child(3) {
+        animation: barAnimation 0.5s 0.5s forwards;
+    }
+}
+
+
+
+
+
+
+
+
+

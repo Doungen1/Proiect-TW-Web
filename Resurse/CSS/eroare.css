@@ -1,0 +1,33 @@
+/* Resetarea marginilor și padding-ului pentru toate elementele */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Utilizați orice font doriți aici */
+    background-color: #f3f4f6; /* O culoare de fundal deschisă */
+    color: #333; /* Culoare text standard */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ff4747; /* O culoare de accent */
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+img {
+    width: 85%; /* Asigurați-vă că imaginea nu depășește lățimea containerului său */
+    height: 85%; /* Păstrează proporțiile imaginii */
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/CSS/galerie.css">
+    <title>Galerie Statică</title>
+</head>
+<body>
+    <h1>Galeria noastră</h1>
+    <div class="galerie">
+        <% for(let img of imagini) { %>
+            <img class="imagine-galerie" src="/imagini/<%= img %>" alt="Imagine din galerie">
+        <% } %>
+    </div>    
+</body>
+</html>

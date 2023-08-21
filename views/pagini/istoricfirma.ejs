@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<%- include('../fragmente/head') %>
+
+<body>
+    <%- include('../fragmente/header') %>
+    <main>
+        <section id="istoric">
+            <h1>Istoricul SharpMasters</h1>
+
+            <article>
+                <h2>Origini</h2>
+                <p>SharpMasters a fost fondată în anul 1995 de către Roberto & Daiana Rocco, cu o viziune clară de a furniza cuțite de calitate superioară pentru pasionații de gătit din întreaga lume.</p>
+                <img src="/imagini/edgar-castrejon-bG5rhvRH0JM-unsplash.jpg" alt="Roberto & Daiana în atelierul original">
+            </article>
+
+            <article>
+                <h2>Expansiunea</h2>
+                <p>Datorită angajamentului față de calitate și designul inovator, SharpMasters a cunoscut o creștere rapidă și a devenit un nume de referință în industria cuțitelor profesionale. Până în anul 2005, am deschis magazine în 5 țări diferite și am servit peste 100.000 de clienți.</p>
+            </article>
+
+            <article>
+                <h2>Inovație</h2>
+                <p>În 2010, SharpMasters a introdus primul său cuțit din oțel de Damasc, combinând tradiția cu tehnologia modernă, pentru a oferi cea mai bună performanță. Această lansare a setat un nou standard în industria cuțitelor.</p>
+            </article>
+
+            <article>
+                <h2>Prezent și viitor</h2>
+                <p>La ora actuală, SharpMasters are reprezentanțe în peste 20 de țări și continuă să inoveze, cu un angajament constant față de excelență și pasiunea pentru arta gătitului.</p>
+            </article>
+        </section>
+    </main>
+
+    <%- include('../fragmente/footer') %>
+
+    <aside>
+        <h3>Abonează-te la Newsletter</h3>
+        <p>Pentru a primi cele mai recente oferte și noutăți de la SharpMasters, înscrie-te la newsletter-ul nostru:</p>
+        <form action="/submit-newsletter" method="post">
+            <input type="email" name="email" placeholder="Introduceți adresa de e-mail" required>
+            <button type="submit">Abonează-te</button>
+        </form>
+    </aside>
+
+</body>
+
+</html>

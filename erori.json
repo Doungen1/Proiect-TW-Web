@@ -1,0 +1,31 @@
+{
+    "cale_baza": "/erori/",
+    "eroare_default": {
+        "titlu": "Eroare",
+        "text": "A apărut o eroare!",
+        "imagine": "generic.jpg"
+    },
+    "info_erori": [
+        {
+            "identificator": 403,
+            "status": true,
+            "titlu": "Acces Interzis",
+            "text": "Ne pare rău, dar pagina pe care o căutați este interzisă",
+            "imagine": "/eroare.jpg"
+        },
+        {
+          "identificator": 404,
+          "status": true,
+          "titlu": "Pagina nu a fost găsită",
+          "text": "Ne pare rău, dar pagina pe care o căutați nu există sau a fost mutată.",
+          "imagine": "eroare404.jpg"
+        },
+        {
+            "identificator": 400,
+            "status": true,
+            "titlu": "Cerere greșită",
+            "text": "Cererea dvs. nu poate fi procesată.",
+            "imagine": "/eroare400.jpg"
+          }
+    ]
+}
