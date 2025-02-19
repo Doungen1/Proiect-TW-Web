@@ -32,9 +32,14 @@ footer {
 }
 
 body {
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     background-color: #f5f5f5;
     color: #333;
 }
+
 
 a {
     font-weight: bold;
@@ -165,8 +170,8 @@ footer address a:hover {
 
 h1, h2 {
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;  /* Aici setăm greutatea pentru bold */
-    color: black;     /* Setăm culoarea la negru */
+    font-weight: 700;  
+    color: black;     
 }
 
 /* Stilizarea secțiunii */
@@ -175,63 +180,63 @@ h1, h2 {
     margin: 40px auto; /* centrat pe orizontală și 40px spațiu deasupra și dedesubt */
     padding: 20px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.2); /* o mică umbră pentru efect 3D */
-    background-color: #f7f7f7; /* un fundal de culoare deschisă */
-    border-radius: 10px; /* colțurile rotunjite */
+    background-color: #f7f7f7; 
+    border-radius: 10px; 
 }
 
 /* Stilizarea titlului */
 #cursuri-blacksmith h2 {
-    text-align: center; /* titlul centrat */
-    color: #333; /* culoarea textului */
-    padding-bottom: 20px; /* spațiu sub titlu */
+    text-align: center; 
+    color: #333; 
+    padding-bottom: 20px; 
 }
 
 /* Stilizarea tabelului */
 #cursuri-blacksmith table {
-    width: 100%; /* tabelul să ocupe toată lățimea secțiunii */
-    border-collapse: collapse; /* îmbină granițele celulelor */
+    width: 100%; /
+    border-collapse: collapse; 
 }
 
 #cursuri-blacksmith th,
 #cursuri-blacksmith td {
-    padding: 10px; /* spațiu în interiorul celulelor tabelului */
-    text-align: center; /* textul centrat în celule */
-    border: 1px solid #ddd; /* o graniță subtilă pentru celule */
+    padding: 10px; 
+    text-align: center; 
+    border: 1px solid #ddd; 
 }
 
 #cursuri-blacksmith th {
-    background-color: #555; /* fundal de culoare închisă pentru antetul tabelului */
-    color: white; /* culoarea textului alb pentru antet */
+    background-color: #555; 
+    color: white; 
 }
 
 #cursuri-blacksmith tbody tr:nth-child(odd) {
-    background-color: #eee; /* o culoare deschisă pentru rândurile impare ale tabelului pentru vizibilitate */
+    background-color: #eee; 
 }
 
 /* Stilizarea footer-ului */
 #cursuri-blacksmith footer {
-    margin-top: 20px; /* spațiu deasupra footer-ului */
-    font-style: italic; /* text italic pentru o notă */
+    margin-top: 20px; 
+    font-style: italic; 
 }
 .table-container {
     max-height: 300px;
     overflow: auto;
-    border: 1px solid #ccc;  /* Opțional: pentru a avea un contur în jurul tabelului */
-    margin-bottom: 20px;    /* O mica distantare intre tabel si footer */
+    border: 1px solid #ccc;  
+    margin-bottom: 20px;    
 }
 
 table {
-    width: 100%;  /* Acest lucru va face ca tabelul să ocupe întreaga lățime a div-ului */
-    border-collapse: collapse;  /* Pentru a reduce distanța dintre celule și pentru a avea borduri mai frumoase */
+    width: 100%;  
+    border-collapse: collapse; 
 }
 
 table th, table td {
-    padding: 8px 12px;  /* Un mic padding pentru a face tabelul mai lizibil */
-    border: 1px solid #ccc;  /* Bordura pentru fiecare celulă */
+    padding: 8px 12px;  
+    border: 1px solid #ccc;  
 }
 
 table thead th {
-    background-color: #f5f5f5;  /* Un fundal mai deschis pentru antetul tabelului */
+    background-color: #f5f5f5;  
 }
 .taburi-iframe a {
     display: inline-block;
@@ -297,6 +302,11 @@ div {
 @media (max-width: 480px) {  /* exemplu pentru ecrane cu lățimea maximă de 480px */
     .container {
         grid-gap: 10px;  /* spațiere redusă pentru ecrane mici */
+    }
+}
+@media (max-width: 320px) {  /* exemplu pentru ecrane cu lățimea maximă de 320px */
+    .container {
+        grid-template-columns: repeat(1, 1fr);  /* o singură coloană */
     }
 }
 figure {

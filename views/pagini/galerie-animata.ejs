@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/CSS/galerie-animata.css">
+    
+    <title>Galerie Animata</title>
+</head>
+<body>
+    <h1>Galeria noastră</h1>
+    <div class="galerie-animata">
+        <% for(let img of imagini) { %>
+            <img class="imagine-galerie-animata" src="/imagini/<%= img %>" alt="Imagine din galerie">
+        <% } %>
+    </div>   
+    <script src="/JS/galerie-animata.js" defer></script> 
+</body>
+</html>

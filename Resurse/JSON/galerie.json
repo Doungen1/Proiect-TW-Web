@@ -1,0 +1,25 @@
+{
+    "cale_galerie":"Resurse/Imagini/galerie",
+    "imagini": [
+        {
+            "fisier": "Poza1.jpg",
+            "descriere": "In bucatarie",
+            "luni":["ianuarie","februarie","martie", "august"]
+        },
+        {
+            "fisier": "Poza2.jpg",
+            "descriere": "In natura",
+            "luni":["ianuarie","februarie","martie", "august"]
+        },
+        {
+            "fisier": "Poza3.jpg",
+            "descriere": "In bucatarie",
+            "luni":["ianuarie","februarie","martie", "august"]
+        },
+        {
+            "fisier": "Poza4.jpg",
+            "descriere": "In natura",
+            "luni":["ianuarie","februarie","martie", "august"]
+        }
+    ]
+}

@@ -1,0 +1,190 @@
+/* CSS general */
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --btn-bg-color: lightgray;
+}
+
+/* Variabile pentru tema dark */
+[data-theme="dark"] {
+    --bg-color: #300202;
+    --text-color: rgb(132, 50, 50);
+    --btn-bg-color: #555;
+}
+
+
+button {
+    background-color: var(--btn-bg-color);
+}
+/* Stiluri implicite (light theme) */
+
+
+/* Stiluri pentru dark theme */
+
+
+
+.container-lg {
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    border: 1px solid #e5e5e5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-light {
+    border-color: #333;
+    color: #333;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-light.active {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.grid-produse {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.produs {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.produs img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.produs .nume {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.produs .info-prod {
+    margin-bottom: 10px;
+}
+
+.selecteaza-cos {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+.pret {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+
+.bi {
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin-right: 5px;
+    }
+/* Variabile pentru tema de bază (light) */
+html[data-theme="dark"] body {
+    background-color: #000000;
+    color: #ffffff;
+}body {
+    background-color: #ffffff;
+    color: #000000;
+}html[data-theme="dark"] main {
+    background-color: #6b0505; 
+}
+
+html[data-theme="dark"] footer {
+    background-color: #111; 
+}
+html[data-theme="dark"] body {
+    background-color: #000000 !important;
+    color: #9c3d3d !important;
+}
+.navbar {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #333; 
+}
+
+.menu {
+    display: flex; 
+    justify-content: space-between; /* Spațiu între .left și .right */
+    align-items: center; /* Centrare verticală */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 0.5rem; /* spațiere laterală între elemente */
+    position: relative;
+}
+
+.nav-item a {
+    color: #fff; /* Culoarea link-urilor */
+    text-decoration: none; /* Elimină sublinierea */
+}
+
+.nav-item:hover a {
+    color: #eee; /* Culoarea link-urilor la hover */
+}
+
+.search-item label {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.search-item button, .sharp-icon-container {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+

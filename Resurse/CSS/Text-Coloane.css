@@ -1,0 +1,21 @@
+
+.text-in-columns {
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: 1px solid black; /* Linie despărțitoare între coloane */
+  }
+  
+  /* Media query pentru ecrane mici și medii - o singură coloană */
+  @media (max-width: 768px) {
+    .text-in-columns {
+      column-count: 1;
+      column-rule: none;
+    }
+  }
+  
+  /* Media query pentru ecrane mari - două coloane */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .text-in-columns {
+      column-count: 2;
+    }
+  }

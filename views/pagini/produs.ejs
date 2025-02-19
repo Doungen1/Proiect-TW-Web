@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head.ejs') %>
+</head>
+<body>
+    <%- include('../fragmente/header.ejs') %>
+
+    <main>
+        <section id="detalii-produs">
+            <h2>Detalii Produs: <span class="val-nume"><%- produs.nume %></span></h2>
+            <div class="info-prod">
+                <p class="pret">Pret: <span class="val-pret"><%- produs.pret %></span></p>
+                <p class="categorie">Categorie: <span class="val-categorie"><%- produs.categorie %></span></p>
+                <p class="descriere">Descriere: <span class="val-descriere"><%- produs.descriere %></span></p>
+            </div>
+            <div class="imagine-produs">
+                <img src="/imagini/produse/<%- produs.poza %>" alt="Imagine pentru <%= produs.nume %>">
+            </div>
+        </section>
+    </main>
+
+    <%- include('../fragmente/footer.ejs') %>
+</body>
+</html>

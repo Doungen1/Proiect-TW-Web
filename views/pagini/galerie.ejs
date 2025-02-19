@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-    <link rel="stylesheet" href="/CSS/galerie.css">
-    <title>Galerie Statică</title>
+  <meta charset="UTF-8">
+  <title>Galerie Statică</title>
+  <link rel="stylesheet" href="/CSS/galerie.css">
 </head>
 <body>
-    <h1>Galeria noastră</h1>
-    <div class="galerie">
-        <% for(let img of imagini) { %>
-            <img class="imagine-galerie" src="/imagini/<%= img %>" alt="Imagine din galerie">
-        <% } %>
-    </div>    
+  <h1>Galeria noastră</h1>
+  <div class="galerie">
+    <% for (let img of imagini) { %>
+      <img class="imagine-galerie" src="/imagini/<%= img %>" alt="Imagine din galerie">
+    <% } %>
+  </div>    
 </body>
 </html>

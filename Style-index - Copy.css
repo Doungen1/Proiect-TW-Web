@@ -1,0 +1,444 @@
+
+
+
+/* Reset CSS pentru a elimina stilurile implicite ale browserului */
+:root {
+    --text-padding: 20px;
+}
+
+body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #c80505;
+    color: #130f0f;
+}
+
+
+a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #000000;
+}
+
+h1, h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    color: black;
+}
+
+header{
+    background-color: #940000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px 15px 0 0;
+}
+
+header h1 span {
+    font-weight: bold;
+}
+nav ul li:first-child { float: left; }
+
+nav ul li { 
+  list-style:none;
+  margin:10px;
+  float: right; 
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px; /* Spațiu între elemente */
+        margin: 0;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+
+}
+
+nav a, nav button {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+
+nav a i, nav #tema i{
+    margin-right: 20px;
+}
+
+nav a:hover, nav button:hover {
+    background-color: #8f0707;
+}
+
+nav .sharp-icon-container a {
+    padding: 0;
+}
+.menu-icon {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bar {
+    background: #000;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+}
+
+.bar:nth-child(1) {
+    top: 0;
+}
+
+.bar:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar:nth-child(3) {
+    bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-icon .bar:nth-child(1) { 
+        animation: barAnimation 0.5s 0.3s forwards;
+    }
+    .menu-icon .bar:nth-child(2) {
+        animation: barAnimation 0.5s 0.4s forwards;
+    }
+    .menu-icon .bar:nth-child(3) {
+        animation: barAnimation 0.5s 0.5s forwards;
+    }
+}
+
+@media print {
+    nav, .footer, .ads, .non-essential, #Despre-Cutite, #link-top {
+        display: none;
+    }
+    body {
+        background-color: white;
+        color: black;
+    }
+    body, article, section {
+        margin: 0;
+        padding: 0;
+    }
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}
+
+.media {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 768px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width:  1200px ) {
+    .container {
+        width: 70%;
+    }
+}
+
+
+header, nav ul, main, section, article, blockquote, ul, aside, footer {
+    padding: var(--text-padding);
+}
+
+main, aside {
+    margin: 20px auto;
+    padding: 20px 0;
+    background-color: #a9b4b4;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+section, article, blockquote, ul {
+    margin-bottom: 30px;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+blockquote {
+    padding-left: 20px;
+    border-left: 4px solid #940000;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.button,input[type="email"], button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left:auto;
+}
+
+aside h3 {
+    margin-bottom: 15px;
+}
+
+aside form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer {
+    padding: 10px 15px;
+    border: none;
+    background-color: #940000;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #740000;
+}
+
+footer address a {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+footer address a:hover {
+    text-decoration: underline;
+}
+
+.fa-solid {
+    margin-right: 5px;
+}
+
+
+.table-container {
+    overflow-x: auto; // Acesta va adăuga o bară de derulare dacă tabelul este prea mare pentru div.
+}
+
+#cursuri-blacksmith {
+    width: 80%; 
+    margin: 40px auto; 
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    background-color: rgba(255, 255, 255, 0.7);
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/resurse/imagini/galerie/Poza2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+#cursuri-blacksmith h2 {
+    text-align: center;
+    color: #d63031;
+    padding-bottom: 20px;
+}
+
+#cursuri-blacksmith table, table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#cursuri-blacksmith th, #cursuri-blacksmith td, table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #eadbdb;
+}
+
+#cursuri-blacksmith th {
+    background-color: #8e5e25;
+    color: white;
+}
+
+#cursuri-blacksmith tbody tr:nth-child(odd) {
+    background-color: rgba(181, 163, 163, 0.1);
+}
+
+#cursuri-blacksmith footer {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+}
+
+.table-container {
+    max-height: 300px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+table thead th {
+    background-color: #f5f5f5;
+}
+
+.taburi-iframe a {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #0056b3;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.taburi-iframe a:hover {
+    background-color: #0056b3;
+}
+
+.taburi-iframe {
+    display: flex;
+    gap: 10px;
+}
+
+#link-top {
+    position: fixed;
+    bottom: 0.3em;
+    opacity: 0.5;
+    left: 0.3em;
+    width: 3rem;
+    box-sizing: border-box;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 5px solid grey;
+    border-top-color: red;
+    border-radius: 50%;
+    background: rgb(220,220,220);
+}
+
+#triunghi {
+    height: 0px;
+    width: 0;
+    display: inline-block;
+    border-bottom: 1.5rem solid grey;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    vertical-align: top;
+    transform: translateY(30%);
+}
+
+.cercuri li {
+    display: inline-block;
+}
+
+.suprafata {
+    color: red;
+    font-weight: bold;
+}
+
+.baza {
+    color: blue;
+    font-style: italic;
+}
+
+.inaltime {
+    color: green;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-gap: 10px;
+    }
+}
+
+figure {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes barAnimation {
+    0% {
+        background: #250363;
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    50% {
+        background: #250363;
+        transform: translateY(5px) rotate(20deg);
+        opacity: 0.8;
+    }
+    100% {
+        background: #250363;
+        transform: translateY(10px) rotate(40deg);
+        opacity: 0.6;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
