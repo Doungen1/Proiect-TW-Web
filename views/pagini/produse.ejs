@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <link rel="stylesheet" href="/Resurse/CSS/Produse.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <%- include('../fragmente/head.ejs') %>
+</head>
+<body>
+    <%- include('../fragmente/header.ejs') %>
+
+    <main>
+        <script id="products-data" type="application/json">
+            <%- JSON.stringify(produse) %>
+        </script>
+
+        <div class="container-lg my-5">
+            <div class="row g-3">
+                <!-- Coloana 1 - Filtre -->
+                <div class="col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inp-nume" placeholder="Nume produs">
+                        <label for="inp-nume">Caută produs</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <select class="form-select" id="inp-categorie">
+                            <option value="toate">Toate categoriile</option>
+                            <option value="bucatarie">Bucătărie</option>
+                            <option value="vanatoare">Vânătoare</option>
+                        </select>
+                        <label for="inp-categorie">Filtru categorie</label>
+                    </div>
+                </div>
+
+                <!-- Coloana 2 - Sortare -->
+                <div class="col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="range" class="form-range" value="0" min="0" max="1000" step="50" 
+                               id="inp-pret">
+                        <label for="inp-pret">Preț minim: <span id="pret-value">0</span> RON</label>
+                    </div>
+
+                    <div class="btn-group w-100" role="group">
+                        <input type="radio" class="btn-check" name="sortType" id="sortType1" value="crescator">
+                        <label class="btn btn-outline-primary" for="sortType1">
+                            <i class="bi bi-sort-down"></i>
+                            Preț crescător
+                        </label>
+
+                        <input type="radio" class="btn-check" name="sortType" id="sortType2" value="descrescator">
+                        <label class="btn btn-outline-primary" for="sortType2">
+                            <i class="bi bi-sort-up"></i>
+                            Preț descrescător
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Coloana 3 - Acțiuni -->
+                <div class="col-md-4">
+                    <div class="d-grid gap-2 mb-3">
+                        <button id="resetare" class="btn btn-secondary btn-icon-responsive">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                            Resetare filtre
+                        </button>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="themeSwitch">
+                        <label class="form-check-label" for="themeSwitch">
+                            <i class="bi bi-moon-stars"></i> Mod întuneric
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sectiunea produse -->
+        <section id="produse" class="mt-5">
+            <h2 class="mb-4">Produse disponibile</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="produse-container"></div>
+            <div id="no-products-message" class="col-12 text-center py-5" style="display: none;">
+                <p class="fs-4 text-muted">Nu s-au găsit produse conform criteriilor selectate.</p>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../fragmente/footer.ejs') %>
+    
+    <script src="/Resurse/JS/Produse.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inițializare produse
+            const productsData = document.getElementById('products-data');
+            const allProducts = JSON.parse(productsData.textContent);
+            const productContainer = document.getElementById('produse-container');
+            const noProductsMsg = document.getElementById('no-products-message');
+            const pretValue = document.getElementById('pret-value');
+
+            // Funcție de randare produse
+            const renderProducts = (products) => {
+                productContainer.innerHTML = products.map(prod => `
+                    <div class="col">
+                        <article class="card h-100 shadow-sm">
+                            // Schimbă linia cu imaginea în:
+                        <img src="/resurse/imagini/produse/${prod.poza || 'default.jpg'}"...>
+                                 class="card-img-top img-fluid p-2" 
+                                 alt="${prod.nume}" 
+                                 style="height: 250px; object-fit: contain">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5">${prod.nume}</h3>
+                                <div class="card-text">
+                                    <p class="text-muted small">${prod.descriere}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 text-primary">${Number(prod.pret).toFixed(2)} RON</span>
+                                        <span class="badge bg-info">${prod.categorie}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                `).join('');
+
+                noProductsMsg.style.display = products.length ? 'none' : 'block';
+            };
+
+            // Funcție de filtrare și sortare
+            const applyFilters = () => {
+                const nume = document.getElementById('inp-nume').value.toLowerCase();
+                const pretMin = parseInt(document.getElementById('inp-pret').value);
+                const categorie = document.getElementById('inp-categorie').value;
+                const sortType = document.querySelector('input[name="sortType"]:checked')?.value;
+
+                let filtered = allProducts.filter(prod => 
+                    prod.nume.toLowerCase().includes(nume) &&
+                    prod.pret >= pretMin &&
+                    (categorie === 'toate' || prod.categorie === categorie)
+                );
+
+                // Sortare
+                if (sortType === 'crescator') {
+                    filtered.sort((a, b) => a.pret - b.pret);
+                } else if (sortType === 'descrescator') {
+                    filtered.sort((a, b) => b.pret - a.pret);
+                }
+
+                renderProducts(filtered);
+            };
+
+            // Evenimente
+            document.getElementById('inp-pret').addEventListener('input', function() {
+                pretValue.textContent = this.value;
+                applyFilters();
+            });
+
+            document.getElementById('resetare').addEventListener('click', () => {
+                document.getElementById('inp-nume').value = '';
+                document.getElementById('inp-pret').value = 0;
+                document.getElementById('inp-categorie').value = 'toate';
+                document.querySelectorAll('input[name="sortType"]').forEach(radio => radio.checked = false);
+                pretValue.textContent = '0';
+                applyFilters();
+            });
+
+            document.querySelectorAll('input, select').forEach(element => {
+                element.addEventListener('input', applyFilters);
+                element.addEventListener('change', applyFilters);
+            });
+
+            // Inițializare
+            applyFilters();
+        });
+    </script>
+</body>
+</html>

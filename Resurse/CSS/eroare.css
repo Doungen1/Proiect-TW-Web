@@ -28,6 +28,6 @@ p {
 }
 
 img {
-    width: 85%; /* Asigurați-vă că imaginea nu depășește lățimea containerului său */
+    width: 85%;
     height: 85%; /* Păstrează proporțiile imaginii */
 }

@@ -1,0 +1,136 @@
+// custom.scss
+$primary: #940000;
+$secondary: #8f0707;
+// A. Customizare butoane
+$btn-border-radius: 2rem;
+$btn-border-width: 2px;
+$btn-padding-x: 1.5rem;
+$btn-padding-y: 0.75rem;
+
+// B. Customizare textarea
+$form-floating-height: 4rem;
+$form-floating-line-height: 1.25;
+$form-floating-padding-y: 1.5rem;
+
+// C. Customizare toggle buttons
+$btn-check-width: 1.5em;
+$btn-check-height: 1.5em;
+
+// D. Grid spacing
+$grid-gutter-width: 2rem;
+
+// E. Customizare switch
+$form-switch-width: 4em;
+$form-switch-height: 2em;
+
+// F. Customizare range
+$form-range-thumb-width: 1.5rem;
+$form-range-thumb-height: 1.5rem;
+$form-range-thumb-bg: $primary;
+$form-range-track-bg: rgba($primary, 0.2);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// A. Stilizare butoane responsive
+.btn-icon-responsive {
+    .btn-text {
+        display: inline-block;
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+    .bi {
+        font-size: 1.2rem;
+    }
+}
+
+// Stiluri pentru toggle buttons
+.btn-group {
+    .btn-outline-primary {
+        &.active {
+            background-color: $primary;
+            color: white;
+        }
+    }
+}
+
+// Suprascrie variabilele Bootstrap:
+$body-bg: #f7f7f7;
+$theme-colors: (
+  "primary": #940000,
+  "secondary": #8f0707
+);
+
+// Reguli CSS suplimentare:
+.custom-btn {
+  background-color: map-get($theme-colors, "primary");
+  color: #fff;
+  border-radius: $border-radius;
+  font-family: $font-family-base;
+  padding: $spacer $spacer * 2;
+}
+/* Variabile CSS pentru teme */
+:root {
+    --culoare-fundal: #f8f9fa;
+    --culoare-text: #212529;
+    --culoare-navbar: #ffffff;
+}
+
+.tema-light {
+    --culoare-fundal: #f8f9fa;
+    --culoare-text: #212529;
+    --culoare-navbar: #ffffff;
+}
+
+.tema-dark {
+    --culoare-fundal: #212529;
+    --culoare-text: #f8f9fa;
+    --culoare-navbar: #2d2d2d;
+}
+
+
+$custom-blue: #0d6efd; 
+$custom-red: #940000;  
+
+
+$theme-colors: (
+  "primary": $custom-red,
+  "secondary": $custom-red,
+  "custom-blue": $custom-blue 
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+.tema-primary {
+    --culoare-fundal: #{$custom-blue};
+    --culoare-text: #ffffff;
+    
+
+    --bs-body-bg: #{$custom-blue};
+    --bs-body-color: #ffffff;
+    
+
+    --bs-primary: #{$custom-blue};
+    --bs-btn-bg: #{darken($custom-blue, 10%)};
+}
+
+
+body {
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-text);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--culoare-navbar) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--culoare-navbar);
+    border-color: rgba(var(--culoare-text-rgb), 0.1);
+}
+
+.dropdown-item {
+    color: var(--culoare-text);
+}

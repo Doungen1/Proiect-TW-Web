@@ -1,7 +1,74 @@
-.imagine-galerie {
-    max-width: 300px;
-    max-height: 200px;
-    width: auto;
-    height: auto;
-    margin: 5px;
+/* galerie-statica.css */
+
+/* Styles for the entire section */
+#galerie-statica {
+    padding: 20px;
+    text-align: center;
 }
+
+/* Styles for the gallery title */
+#galerie-statica h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Styles for the grid container */
+#grid-galerie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-items: center; /* Acest stil va centra elementele pe orizontală */
+    align-items: center;   /* Acest stil va centra elementele pe verticală */
+    grid-row-gap:0.5 rem;
+    grid-column-gap:0.5rem;
+    counter-reset: nrimag 0; /* Acest stil va reseta numărul de imagini */
+}
+
+/* Styles for each image */
+#grid-galerie figure {
+    width: auto; /* Acest stil va controla lățimea figurilor */
+    margin: 0;  /* Acest stil va asigura că nu există margini suplimentare */
+    box-sizing: border-box; /* Acest stil se asigură că padding și border sunt incluse în lățimea totală */
+}
+
+#grid-galerie img {
+    max-width: 100%; /* Acest stil se asigură că imaginile nu depășesc lățimea containerului lor */
+    display: block;  /* Îndepărtează orice spațiu/margini de jos */
+}
+
+/* Hover effect for enlarging image */
+#grid-galerie figure:hover img {
+    transform: scale(1.1);
+}
+
+/* Styles for the image caption */
+#grid-galerie figcaption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+#grid-galerie .zoomed {
+    transform: scale(2);
+    z-index: 10;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

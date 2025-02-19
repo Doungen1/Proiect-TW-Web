@@ -1,0 +1,261 @@
+// Definește variabilele personalizate pentru Bootstrap
+@use "../../node_modules/bootstrap/scss/bootstrap";
+@use "hamburger";
+@use "nav";
+
+
+$darkteal: #008080;
+$darkgreen: #006400;
+$primary: $darkteal;
+$secondary: $darkgreen;
+$screen-md: 800px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+$btn-padding-y-lg: 0.5rem; // sau orice altă valoare
+$btn-padding-x-lg: 1rem;
+$btn-font-size-lg: 1.25rem;
+$btn-border-radius-lg: 0.3rem;
+$enable-rounded: true;
+$danger: #dc3545;
+// Medium screen / desktop
+$screen-md: 800px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+$display-font-sizes: (
+    1: 5rem,
+    2: 4.5rem,
+    3: 4rem,
+    4: 3.5rem,
+    5: 3rem,
+    6: 2.5rem,
+    7: 0.75rem
+) ;
+
+
+// Large screen / wide desktop
+$screen-lg: 1300px;
+$screen-lg-min: $screen-lg;
+$screen-lg-desktop: $screen-lg-min;
+ // Acesta este culoarea standard pentru "danger" în Bootstrap. Poți să folosești orice altă culoare.
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px) !default;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px
+) !default;
+// Colums
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+$container-padding-xs: 10px;
+$container-padding-sm: 15px;
+$container-padding-md: 20px;
+$container-padding-lg: 25px;
+$container-padding-xl: 30px;
+
+// Bootstrap variables that you can override
+
+$btn-border-width: 2px;
+$btn-border-radius: 10px;
+
+// Input Range
+// Variables
+$font-size-base: 1rem;
+$form-range-thumb-width: $font-size-base * 1.5;
+$form-range-thumb-height: $font-size-base * 1.5;
+$form-range-track-cursor:         pointer;
+$form-range-track-bg: #7a1305; // Acesta este un verde luminos.
+$form-range-track-border-radius:1rem;
+$form-range-thumb-border: 0;
+$form-range-thumb-transition:background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+$body-color: #212529;
+$body-bg: #fff;
+$border-width: 36rem;
+$border-radius: 0.25rem;
+$component-active-bg: $primary;
+$input-focus-border-color: $primary;
+$btn-focus-box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+$black: #000;
+$accordion-border-radius: 0;
+$accordion-border-width: 0;
+
+$accordion-padding-y:                     1rem;
+$accordion-padding-x:                     1.25rem;
+$accordion-color:                         $body-color;
+$accordion-bg:                            $body-bg;
+$accordion-border-width:                  $border-width;
+$accordion-border-color:                  rgba($black, .125);
+$accordion-border-radius:                 $border-radius;
+$accordion-inner-border-radius:           subtract($accordion-border-radius, $accordion-border-width);
+
+$accordion-body-padding-y:                $accordion-padding-y;
+$accordion-body-padding-x:                $accordion-padding-x;
+
+$accordion-button-padding-y:              $accordion-padding-y;
+$accordion-button-padding-x:              $accordion-padding-x;
+$accordion-button-color:                  $accordion-color;
+$accordion-button-bg:                     $accordion-bg;
+$accordion-transition:                    $btn-transition, border-radius .15s ease;
+$accordion-button-active-bg:              tint-color($component-active-bg, 90%);
+$accordion-button-active-color:           shade-color($primary, 10%);
+
+$accordion-button-focus-border-color:     $input-focus-border-color;
+$accordion-button-focus-box-shadow:       $btn-focus-box-shadow;
+
+$accordion-icon-width:                    1.25rem;
+$accordion-icon-color:                    $accordion-color;
+$accordion-icon-active-color:             $accordion-button-active-color;
+$accordion-icon-transition:               transform .2s ease-in-out;
+$accordion-icon-transform:                rotate(-180deg);
+
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+:root{
+    --bs-body-font-family-base: "Supermercado One", cursive;
+}
+
+// Defnește mixin-ul tău
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+    @if $enable-rounded {
+      border-radius: valid-radius($radius);
+    }
+    @else if $fallback-border-radius != false {
+      border-radius: $fallback-border-radius;
+    }
+  }
+
+// Source mixin
+@mixin make-container($padding-x: $container-padding-x) {
+    width: 100%;
+    padding-right: $padding-x;
+    padding-left: $padding-x;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  // Usage
+  .custom-container {
+  // Default for extra small screens
+  @include make-container($container-padding-xs);
+  
+  // Small screens and up
+  @include bootstrap.media-breakpoint-up(sm) {
+    @include make-container($container-padding-sm);
+}
+
+
+  // Medium screens and up
+  @include bootstrap.media-breakpoint-up(md) {
+    @include make-container($container-padding-md);
+  }
+
+  // Large screens and up
+  @include bootstrap.media-breakpoint-up(lg) {
+    @include make-container($container-padding-lg);
+  }
+
+  // Extra large screens and up
+  @include bootstrap.media-breakpoint-up(xl) {
+    @include make-container($container-padding-xl);
+  }
+}
+// Apliquează stilurile personalizate
+
+.bg-primary {
+    background-color: $primary !important;
+}
+.bg-secondary {
+    background-color: $secondary !important;
+}
+
+.table-container {
+    @include bootstrap.border-radius;
+}
+
+.custom-btn {
+    @include bootstrap.button-variant($primary, darkgray);
+    @include bootstrap.button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+
+}
+
+.custom-btn1 {
+    @include bootstrap.button-variant($secondary, darkgray);
+    @include bootstrap.button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+
+}
+
+.custom-btn2 {
+    @include bootstrap.button-variant($danger, darkgray);
+    @include bootstrap.button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+
+}
+
+.menu{
+    background: linear-gradient(to right, rgba($primary, 0.95), rgba($secondary, 0.95));
+    text-align: center;
+    display:flex;
+    justify-content: space-between;
+    a{
+        color:black !important;
+        text-transform: capitalize;
+        font-weight: 600;
+        text-align: center;
+    button{
+        color:black !important;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    }
+}
+
+.btn-rounder{
+    position : relative;
+    padding: 0.93rem 4.75rrem 0.93rem 1.23rem;
+    font-weight: 700;
+    margin: 0;
+    border: 0.1 rem solid rgba(white, 0.6);
+    background-color: white;
+}
+
+.span {
+    position: absolute;
+    background-color: $primary;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+
+// Variables
+.form-range {
+    &::-webkit-slider-runnable-track {
+      background-color: $form-range-track-bg;
+    }
+    &::-moz-range-track {
+      background-color: $form-range-track-bg;
+    }
+    &::-webkit-slider-thumb {
+          width: $form-range-thumb-width;
+          height: $form-range-thumb-height;
+          appearance: none;  
+        }
+      }
+      $bar-count: 3;
+      $base-delay: 300ms;

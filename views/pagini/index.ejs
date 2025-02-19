@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro"> <!-- 1.1. -->
     <%- include('../fragmente/head') %>
 <body>
+    <div class = "custom-container">
     <%- include('../fragmente/header') %>
+    <!-- Etapa 4.16 -->
     <p><%- locals.ip %></p>
     <main>
-            <section id="Despre-Cutite">
-                <h2>Despre Cutite</h2>
-                <p>Vizualizează videoclipurile noastre recomandate:</p>
+        <section id="Despre-Cutite">
+            <h2>Despre Cutite</h2>
+            <p>Vizualizează videoclipurile noastre recomandate:</p>
+            
+            <!-- Containerul extern care grupează linkurile și iframe-ul -->
+            <div class="container-iframe">
+                <!-- Containerul linkurilor (taburi) -->
                 <div class="taburi-iframe">
                     <a href="https://www.youtube.com/embed/2IVOBqLyHtY" target="ifr-video">Otelul de Damasc</a>
                     <a href="https://www.youtube.com/embed/LAplk_irlPE" target="ifr-video">Cutite de Bucatarie</a>
                 </div>
-                
-                <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/2IVOBqLyHtY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>               
-                <p>Utilizarea corectă a unui <dfn title="Instrument ascuțit folosit pentru tăiere">cuțit</dfn> este esențială atât pentru <strong>siguranță</strong>, cât și pentru eficiență în bucătărie. Dacă ești nou în <b>lumea gătitului</b> sau pur și simplu dorești să îți îmbunătățești abilitățile cu cuțitul, avem un <em>ghid perfect</em> pentru tine!</p>
-                <a href="pdf/Basic-Knife-Skills-PDF.pdf" download="Ghid Utilizare Cutite in Bucatarie"><i class="fa-solid fa-download fa-beat"></i>Descarcă ghidul nostru despre Abilități de Bază cu Cuțitul</a>
-            </section>            
+                <!-- Iframe-ul care afișează videoclipurile -->
+                <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/2IVOBqLyHtY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <p>
+                Utilizarea corectă a unui 
+                <dfn title="Instrument ascuțit folosit pentru tăiere">cuțit</dfn> 
+                este esențială atât pentru <strong>siguranță</strong>, cât și pentru eficiență în bucătărie. 
+                Dacă ești nou în <b>lumea gătitului</b> sau dorești să îți îmbunătățești abilitățile cu cuțitul, avem un <em>ghid perfect</em> pentru tine!
+            </p>
+            <a href="pdf/Basic-Knife-Skills-PDF.pdf" download="Ghid Utilizare Cutite in Bucatarie">
+                <i class="fa-solid fa-download fa-beat"></i>Descarcă ghidul nostru despre Abilități de Bază cu Cuțitul
+            </a>
+        </section>
+                 
      
+
+        <!--1.6. --> 
+        <!--1.7. -->
+        <!--1.8. -->
+        <!-- 1.12 la faq-->
         <section id="Colectia-SharpMasters">
             <h2>Colectia SharpMasters</h2>
             <article>
@@ -32,7 +53,7 @@
                 <h3>Accesorii</h3>
                 <blockquote>
                     <p>În plus față de cuțitele de top, oferim și soluții pentru 
-                    <strong>ascuțit cutite</strong>. Asigurați-vă că instrumentele dvs. sunt întotdeauna ascuțite și gata de folosit cu accesoriile noastre.
+                 <!--1.10.c-->   <strong>ascuțit cutite</strong>. Asigurați-vă că instrumentele dvs. sunt întotdeauna ascuțite și gata de folosit cu accesoriile noastre.
                     </p>
                 </blockquote>
 
@@ -45,11 +66,12 @@
         </section>
 
         <section id="oferte">
+            <div class="text-in-columns">
             <h2>Oferte speciale</h2>
             
             <article>
                 <h3>Oferta săptămânii: Cuțitul bucătarului</h3>
-                <p>Beneficiază de o reducere de <s>20%</s> <b><ins>30%</ins></b> la cuțitul bucătarului. Acest cuțit din oțel de Damasc este perfect pentru toate nevoile dvs. de gătit!</p>
+                <p>Beneficiază de o reducere de <!-- 1.10.e--> <s>20%</s> <b><ins>30%</ins></b> la cuțitul bucătarului. Acest cuțit din oțel de Damasc este perfect pentru toate nevoile dvs. de gătit!</p>
             </article>
         
             <article>
@@ -58,32 +80,56 @@
             </article>
         
             <article>
+           
                 <h3>Accesorii: Cumpără 2, al 3-lea este gratuit</h3>
                 <p>La oricare două accesorii cumpărate, primești un al treilea gratuit. Alege dintre șlefuitorii de cuțite, hușele de protecție și seturile de întreținere.</p>
             </article>
-        
+        </div>
         </section>
         
 
         <section id="despre-noi">
             <h2>Despre Noi</h2>
-            <p>SharpMasters este dedicat oferirii celor mai bune cuțite profesionale pentru cei pasionați de gătit... Am fost fondati de Roberto & Daiana Rocco în 1995 și funcționăm ca SRL (<abbr title="Societate cu Răspundere Limitată">SRL</abbr>).</p>
+            <p>SharpMasters este dedicat oferirii celor mai bune cuțite profesionale pentru cei pasionați de gătit... Am fost fondati de Roberto & Daiana Rocco în 1995 și funcționăm ca SRL <!--1.10.f-->(<abbr title="Societate cu Răspundere Limitată">SRL</abbr>).</p>
             <p>Pentru mai multe detalii despre istoria noastră și evoluția SharpMasters, <a href="/istoricfirma">click aici</a>.</p>
-            <p>De asemenea, dacă doriți să aflați mai multe despre istoria cuțitelor și arta lor în general, vă recomandăm să vizitați <a href="https://destepti.ro/istoria-si-evolutia-cutitului-de-la-arma-la-instrument-utilizat-pentru-a-manca/" target="_blank">destepti.ro</a> pentru un articol detaliat.</p>
+            <p>De asemenea, dacă doriți să aflați mai multe despre istoria cuțitelor și arta lor în general, vă recomandăm să vizitați <!--1.11.a.--><a href="https://destepti.ro/istoria-si-evolutia-cutitului-de-la-arma-la-instrument-utilizat-pentru-a-manca/" target="_blank" class="btn btn-info">destepti.ro</a> pentru un articol detaliat.</p>
         </section>
         
+        <div class="marquee">
+            <span>Acesta este un text care se mișcă orizontal și reapare după ce dispare complet.</span>
+        </div>
+
+        <section id ="galerie-statica">
+            <h2>Galerie</h2><div class="table-container">
+            <div id="grid-galerie">
+                <% for (let imag of locals.imagini) { 
+                    d= new Date()
+                    luna=d.getMonth();
+                    vLuni=["ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie", "octombrie","noiembrie","decembrie"]
+                    console.log("Imagine:", imag.fisier, "luni:", imag.luni);
+                    if (imag.luni && imag.luni.includes(vLuni[luna])) { %>
+                        <figure>
+                            <picture>
+                                <source srcset="<%- imag.fisier_mediu %>" media="(max-width: 200px)"/>
+                                <img src="<%- imag.fisier %>" alt="Descriere">
+                            </picture>
+                        </figure>
+                <%   } 
+                } %>
+                    <% console.log(locals.imagini) %>
+                </div>
+            </div>
+        </section>
         
-        <section id="cursuri-blacksmith">
+        <div class = "custom-border"><section id="cursuri-blacksmith">
             <h2>Cursuri Blacksmith organizate de SharpMasters</h2>
             <div class="table-container">
-            <table border="1">
-                <!-- Antetul tabelului -->
+            <table>
                 <thead>
                     <tr>
                         <th colspan="4">Plan Cursuri</th>
                 </thead>
-        
-                <!-- Corpul tabelului -->
+
                 <tbody>
                     <tr>
                         <td>Nivel</td>
@@ -117,9 +163,9 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><button>Cumpara</button></td>
-                        <td><button>Cumpara</button></td>
-                        <td><button>Cumpara</button></td>
+                        <td><button class="btn btn-primary custom-btn">Cumpara</button></td>
+                        <td><button class="btn btn-secondary custom-btn1">Cumpara</button></td>
+                        <td><button class="btn btn-danger custom-btn2">Cumpara</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -128,9 +174,11 @@
                 <p>SharpMasters își rezervă dreptul de a modifica sau actualiza informațiile prezentate fără notificare prealabilă. Pentru mai multe detalii sau clarificări, vă rugăm să <a href="contact.html">contactați SharpMasters</a>.</p>
             </footer>
         </section>
+    </div>
         
-        <figure>
-            <picture>
+    
+        <figure> 
+            <picture><div class="table-container">
                 <source media="(max-width: 600px)" srcset="imagini/wildcooking-phone.jpg">
                 <source media="(min-width: 601px) and (max-width: 1024px)" srcset="imagini/wildcooking-tablet.jpg">
                 <source media="(min-width: 1025px)" srcset="imagini/wildcooking-desktop.jpg">
@@ -138,28 +186,43 @@
             </picture>
             <figcaption>SharpMasters</figcaption>
         </figure>
-        <section id="faq">
-            <h2>Întrebări frecvente</h2>
-            
-            <details>
-                <summary>Cum îmi pot ascuți cuțitul acasă?</summary>
-                <p>Puteți folosi o piatră de ascuțit sau un șlefuitor de cuțite. Este important să mențineți un unghi constant când ascuțiți lama și să urmați instrucțiunile specifice instrumentului pe care îl utilizați.</p>
-            </details>
         
-            <details>
-                <summary>Ce înseamnă un cuțit "full tang"?</summary>
-                <p>Un cuțit "full tang" înseamnă că lama cuțitului se extinde prin mânerul cuțitului. Acest lucru conferă cuțitului o mai mare durabilitate și echilibru.</p>
-            </details>
         
-            <details>
-                <summary>Care este diferența dintre cuțitele din oțel inoxidabil și cele din oțel carbon?</summary>
-                <p>Cuțitele din oțel inoxidabil sunt rezistente la rugina și necesită întreținere minimă, dar pot fi mai greu de ascuțit. Cuțitele din oțel carbon se ascutesc mai ușor și pot menține o ascuțime mai lungă, dar pot rugini dacă nu sunt îngrijite corespunzător.</p>
-            </details>
+                <section id="faq">
+                    <h2>Întrebări frecvente</h2>
+                    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Cum îmi pot ascuți cuțitul acasă? </button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body"><strong>Puteți folosi o piatră de ascuțit sau un șlefuitor de cuțite. Este important să mențineți un unghi constant când ascuțiți lama și să urmați instrucțiunile specifice instrumentului pe care îl utilizați.</strong></div></div></div>
+            <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Ce înseamnă un cuțit "full tang"?</button></h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>Un cuțit "full tang" înseamnă că lama cuțitului se extinde prin mânerul cuțitului. Acest lucru conferă cuțitului o mai mare durabilitate și echilibru.</strong></div></div></div>
+                <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Care este diferența dintre cuțitele din oțel inoxidabil și cele din oțel carbon?</button></h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>Cuțitele din oțel inoxidabil sunt rezistente la rugina și necesită întreținere minimă, dar pot fi mai greu de ascuțit. Cuțitele din oțel carbon se ascutesc mai ușor și pot menține o ascuțime mai lungă, dar pot rugini dacă nu sunt îngrijite corespunzător.</strong>
+                </div>
+            </div>
+        </div>
 
-            <details>
-                <summary>Care este formula de baza pentru calcularea ariei unui cutit normal?</summary>
-                <p>
-                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <%# Bonus 1 %>
+        <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Care este formula de baza pentru calcularea ariei unui cutit normal?</button></h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class = "accordion-body">
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mi class="suprafata">S</mi>
                         <mo>=</mo>
                         <mfrac>
@@ -173,11 +236,7 @@
                         <mo>&times;</mo>
                         <mi class="inaltime">h</mi>
                     </math>
-                    
-                </p>
-            </details>
-            
-        
+                    </div></div></div>
         </section>
         
     </main>
@@ -187,11 +246,12 @@
         <p>Pentru a primi cele mai recente oferte și noutăți de la SharpMasters, înscrie-te la newsletter-ul nostru:</p>
         <form action="/submit-newsletter" method="post">
             <input type="email" name="email" placeholder="Introduceți adresa de e-mail" required>
-            <button type="submit">Abonează-te</button>
+            <button class="footer" type="submit">Abonează-te</button>
+
         </form>
     </aside>
+</div>
 
-   
 </body>
 
 </html>

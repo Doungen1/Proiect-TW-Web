@@ -1,13 +1,27 @@
+<!-- Etapa 4.12 -->
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <title><%= titlu %></title>
-    <link rel="stylesheet" href="/css/eroare.css">
+  <meta charset="UTF-8">
+  <!-- Titlul paginii se va seta din variabila 'titlu' transmisă de Express -->
+  <title><%= titlu %></title>
+  <link rel="stylesheet" href="/css/eroare.css">
 </head>
 <body>
+  <header>
+
     <h1><%= titlu %></h1>
-    <p><%= text %></p>
+  </header>
+  
+  <main>
+  
+  <p><%= text %></p>
     <img src="<%= imagine %>" alt="Eroare">
+  </main>
+  
+  <footer>
+    <a href="/index">Înapoi la Acasă</a>
+  </footer>
 </body>
 </html>
-

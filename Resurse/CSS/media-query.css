@@ -1,0 +1,54 @@
+/* Stilurile implicite pentru tabel */
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Media query pentru ecrane sub 600px */
+
+@media only screen and (max-width: 600px) {
+    /* Capul tabelului devine ca un rând obișnuit */
+    .table-container thead {
+        display: block;
+        float: left;
+    }
+
+    /* Fiecare rând va fi afișat ca un tabel separat */
+    .table-container tr {
+        display: block;
+        padding: 0.6em;
+        margin-bottom: 0.625em;
+    }
+
+    /* Capul tabelului devine ca o coloană */
+    .table-container th {
+        border: none;
+        border-bottom: 1px solid #eee;
+        padding-left: 0;
+    }
+
+    .table-container td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    /* Adăugați un pseudoelement pentru a afișa titlul coloanei înainte de conținutul celulei */
+    .table-container td:before {
+        content: attr(data-label);
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+    }
+}

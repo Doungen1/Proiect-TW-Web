@@ -4,39 +4,76 @@
 /* Reset CSS pentru a elimina stilurile implicite ale browserului */
 :root {
     --text-padding: 20px;
+
 }
-header, 
-nav ul, 
-main, 
-section, 
-article, 
-blockquote, 
-ul, 
-aside, 
-footer {
+header, main, section, article, blockquote, ul, aside, footer {
     padding: var(--text-padding);
-}
-
-.media {
-    width: 100%;       /* Lățimea implicită este de 100% din părinte */
-    max-width: 1200px; /* Lățimea maximă pe care media o poate avea */
-    min-width: 300px;  /* Lățimea minimă pe care media o poate avea */
-}
-
-* {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    max-width: 100%;
+
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #333;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #8c8c8c;
+    color: #440303;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+
+    text-justify: inter-word;
+    text-decoration: none;
+    list-style-type: none;
+    transition: background-color 0.3s;
+    max-width: 100%;
+
+}
+header{
+    background-color: #651d1d;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
 }
 
-a {
+h1, h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}header h1 span {
+    font-weight: bold;
+    color: #fff;
+    background-color: #8c8c8c;
+    padding: 0 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+a{
     font-weight: bold;
     text-decoration: none;
     color: #000000;
@@ -45,100 +82,101 @@ a {
 
 a:hover {
     color: #000000;
+    text-decoration: underline;
 }
 
-header {
-    background-color: #940000;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 15px 15px 0 0;
+@media only screen and (max-width: 768px) {
+    .menu-icon .bar:nth-child(1) { 
+        animation: barAnimation 0.5s 0.3s forwards;
+
+    }
+    .menu-icon .bar:nth-child(2) {
+        animation: barAnimation 0.5s 0.4s forwards;
+
+    }
+    .menu-icon .bar:nth-child(3) {
+        animation: barAnimation 0.5s 0.5s forwards;
+
+    }
+}
+@media print {
+    nav, .footer, .ads, .non-essential, #Despre-Cutite, #link-top {
+        display: none;
+    }
+    body {
+        background-color: white;
+        color: black;
+    }
+    body, article, section {
+        margin: 0;
+        padding: 0;
+    }
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
 }
 
-
-header h1 span {
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
+.media {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding-top: 15px;
-}
-
-main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-iframe {
-    width: 100%;
-    border: none;
-    margin-top: 15px;
-}
-
-article {
-    margin-bottom: 20px;
-}
-
-blockquote {
-    padding-left: 20px;
-    border-left: 4px solid #940000;
-    font-style: italic;
-    margin: 20px 0;
-}
-
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-aside {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-aside h3 {
-    margin-bottom: 15px;
-}
-
-aside form {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 768px;
+    margin-right: 0;
+    margin-left: 0;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    min-width: 768px;
+
 }
 
-input[type="email"] {
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 }
 
-button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #940000;
-    color: #ffffff;
+@media (min-width:  1200px ) {
+    .container {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+
+main, aside {
+    margin: 20px auto;
+    padding: 20px 0;
+    background-color: #a9b4b4;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    cursor: pointer;
     transition: background-color 0.3s;
+    max-width: 100%;
 }
 
-button:hover {
-    background-color: #740000;
+section, article, blockquote, ul {
+    padding: var(--text-padding);
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-justify: inter-word;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    max-width: 100%;
+    margin-bottom: 30px;
 }
 
 footer {
@@ -146,7 +184,77 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 15px 15px;
+    transition: background-color 0.3s;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+blockquote {
+    padding-left: 20px;
+    border-left: 4px solid #940000;
+    font-style: italic;
+    margin: 20px 0;
+}
+ul {
+    list-style-type: disc;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 40px;
+}
+.button,input[type="email"], button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+
+}
+iframe {
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+aside h3 {
+    margin-bottom: 15px;
+    color: #940000;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+aside form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer {
+    padding: 10px 15px;
+    border: none;
+    background-color: #940000;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+button:hover {
+    background-color: #740000;
+    color: #ffffff;
 }
 
 footer address a {
@@ -163,85 +271,98 @@ footer address a:hover {
     margin-right: 5px;
 }
 
-h1, h2 {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;  /* Aici setăm greutatea pentru bold */
-    color: black;     /* Setăm culoarea la negru */
+
+.table-container {
+    overflow-x: auto; 
+
+
 }
 
-/* Stilizarea secțiunii */
 #cursuri-blacksmith {
-    width: 80%; /* latimea secțiunii este de 80% din lățimea totală a părintelui său */
-    margin: 40px auto; /* centrat pe orizontală și 40px spațiu deasupra și dedesubt */
+    width: 80%; 
+    margin: 40px auto; 
     padding: 20px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2); /* o mică umbră pentru efect 3D */
-    background-color: #f7f7f7; /* un fundal de culoare deschisă */
-    border-radius: 10px; /* colțurile rotunjite */
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    background-color: rgba(255, 255, 255, 0.7);
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/resurse/imagini/galerie/Poza2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    max-width: 100%;
+
 }
 
-/* Stilizarea titlului */
 #cursuri-blacksmith h2 {
-    text-align: center; /* titlul centrat */
-    color: #333; /* culoarea textului */
-    padding-bottom: 20px; /* spațiu sub titlu */
+    text-align: center;
+    color: #d63031;
+    padding-bottom: 20px;
+
 }
 
-/* Stilizarea tabelului */
-#cursuri-blacksmith table {
-    width: 100%; /* tabelul să ocupe toată lățimea secțiunii */
-    border-collapse: collapse; /* îmbină granițele celulelor */
+#cursuri-blacksmith table, table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+
 }
 
-#cursuri-blacksmith th,
-#cursuri-blacksmith td {
-    padding: 10px; /* spațiu în interiorul celulelor tabelului */
-    text-align: center; /* textul centrat în celule */
-    border: 1px solid #ddd; /* o graniță subtilă pentru celule */
+#cursuri-blacksmith th, #cursuri-blacksmith td, table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #eadbdb;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #440303;
+    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #cursuri-blacksmith th {
-    background-color: #555; /* fundal de culoare închisă pentru antetul tabelului */
-    color: white; /* culoarea textului alb pentru antet */
+    background-color: #8e5e25;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+
 }
 
 #cursuri-blacksmith tbody tr:nth-child(odd) {
-    background-color: #eee; /* o culoare deschisă pentru rândurile impare ale tabelului pentru vizibilitate */
+    background-color: rgba(181, 163, 163, 0.1);
 }
 
-/* Stilizarea footer-ului */
 #cursuri-blacksmith footer {
-    margin-top: 20px; /* spațiu deasupra footer-ului */
-    font-style: italic; /* text italic pentru o notă */
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+    text-align: center;
 }
+
 .table-container {
     max-height: 300px;
     overflow: auto;
-    border: 1px solid #ccc;  /* Opțional: pentru a avea un contur în jurul tabelului */
-    margin-bottom: 20px;    /* O mica distantare intre tabel si footer */
-}
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 
-table {
-    width: 100%;  /* Acest lucru va face ca tabelul să ocupe întreaga lățime a div-ului */
-    border-collapse: collapse;  /* Pentru a reduce distanța dintre celule și pentru a avea borduri mai frumoase */
-}
-
-table th, table td {
-    padding: 8px 12px;  /* Un mic padding pentru a face tabelul mai lizibil */
-    border: 1px solid #ccc;  /* Bordura pentru fiecare celulă */
 }
 
 table thead th {
-    background-color: #f5f5f5;  /* Un fundal mai deschis pentru antetul tabelului */
+    background-color: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
+
 .taburi-iframe a {
     display: inline-block;
-    width: 200px; 
-    height: 40px; 
+    width: 200px;
+    height: 40px;
     line-height: 40px;
-    text-align: center; 
-    background-color: #007BFF; 
-    color: white; 
-    border: 1px solid #0056b3; 
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #0056b3;
     text-decoration: none;
     border-radius: 5px;
     margin-right: 10px;
@@ -252,28 +373,31 @@ table thead th {
 .taburi-iframe a:hover {
     background-color: #0056b3;
 }
+
 .taburi-iframe {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+
 }
 
-div {
-    display: block;
+#link-top {
+    position: fixed;
+    bottom: 0.3em;
+    opacity: 0.5;
+    left: 0.3em;
+    width: 3rem;
+    box-sizing: border-box;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 5px solid grey;
+    border-top-color: red;
+    border-radius: 50%;
+    background: rgb(220,220,220);
+    transition: opacity 0.3s;
+    z-index: 1;
 }
-
-#link-top {position: fixed;
-bottom: 0.3em;
-opacity: 0.5;
-left: 0.3em;
-width: 3rem;
-box-sizing: border-box;
-height: 3rem;
-line-height: 3rem;
-text-align: center;
-border: 5px solid grey;
-border-top-color: red;
-border-radius: 50%;
-background: rgb(220,220,220);}
 
 #triunghi {
     height: 0px;
@@ -284,141 +408,79 @@ background: rgb(220,220,220);}
     border-right: 1rem solid transparent;
     vertical-align: top;
     transform: translateY(30%);
-}
-* {
-    padding: 0;
-    margin: 0;
-    text-indent: 0;
+
 }
 
 .cercuri li {
     display: inline-block;
 }
+
 .suprafata {
     color: red;
     font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .baza {
     color: blue;
     font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .inaltime {
     color: green;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* exemplu pentru 4 coloane */
-    grid-gap: 30px;  /* spațierea implicată între celule */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 30px;
 }
-@media (max-width: 768px) {  /* exemplu pentru ecrane cu lățimea maximă de 768px */
+
+@media (max-width: 768px) {
     .container {
-        grid-gap: 20px;  /* spațiere redusă pentru ecrane medii */
+        grid-gap: 20px;
     }
 }
-@media (max-width: 480px) {  /* exemplu pentru ecrane cu lățimea maximă de 480px */
+
+@media (max-width: 480px) {
     .container {
-        grid-gap: 10px;  /* spațiere redusă pentru ecrane mici */
+        grid-gap: 10px;
     }
 }
+
 figure {
-    max-width: 100%; /* Asigură-te că figura nu se extinde peste containerul părinte */
-    overflow: hidden; /* Orice conținut care depășește va fi ascuns */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 0px;
+    border: 0px;
 }
 
 figure img {
-    width: 100%; /* Lățimea imaginii va fi setată la 100% din lățimea figurei */
-    height: auto; /* Înălțimea va fi calculată automat în funcție de proporția originală a imaginii */
-    display: block; /* Elimină orice spațiu de sub imagine */
-}
-
-nav ul {
-    list-style-type: none;      /* elimină bulinele de la listă */
-    padding: 0;                 /* elimină padding-ul implicit */
-    display: flex;              /* aliniază elementele orizontal */
-    justify-content: space-around; /* distribuie spațiul între linkuri */
-}
-
-nav a {
-    text-decoration: none;    /* elimină sublinierea */
-    padding: 10px 20px;       /* spațiere în interiorul linkurilor */
-    color: #333;              /* culoarea textului linkurilor */
-    border-radius: 5px;       /* colțuri rotunjite */
-    transition: background-color 0.3s; /* tranzitie la schimbare culorii de fundal */
-    display: flex;            /* permite alinierea iconiței și textului */
-    align-items: center;      /* aliniază vertical iconița și textul */
-}
-
-nav a i {
-    margin-right: 10px;       /* spațiere între iconiță și text */
-}
-
-nav a:hover {
-    background-color: #f5f5f5; /* culoarea de fundal atunci când cursorul este deasupra */
-}
-
-@media print {
-    /* Ascunde meniul navigațional și alte elemente non-esențiale */
-    nav, .footer, .ads, .non-essential, #Despre-Cutite, #link-top {
-        display: none;
-    }
-
-    /* Setează fundalul pe alb și textul pe negru */
-    body {
-        background-color: white;
-        color: black;
-    }
-
-    /* Elimină marginile */
-    body, article, section {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Alte stiluri personalizate pentru printare pot fi adăugate aici */
-}
-@media print and (orientation: portrait) {
-    img {
-        max-width: 100%;
-        page-break-inside: avoid; /* Evită să se rupă o imagine între două pagini */
-    }
-}
-
-@media print and (orientation: landscape) {
-    img {
-        max-width: 100%;
-        page-break-inside: avoid; /* Evită să se rupă o imagine între două pagini */
-    }
-}
-.menu-icon {
-    width: 30px;
-    height: 25px;
-    position: relative;
-    cursor: pointer;
-}
-
-.bar {
-    background: #000;
-    height: 4px;
     width: 100%;
-    position: absolute;
-    left: 0;
-    transition: 0.3s;
-}
-
-.bar:nth-child(1) {
-    top: 0;
-}
-
-.bar:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.bar:nth-child(3) {
-    bottom: 0;
+    height: auto;
+    display: block;
+    transition: background-color 0.3s;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 0px;
 }
 
 @keyframes barAnimation {
@@ -439,17 +501,10 @@ nav a:hover {
     }
 }
 
-@media only screen and (max-width: 768px) {
-    .menu-icon .bar:nth-child(1) {
-        animation: barAnimation 0.5s 0.3s forwards;
-    }
-    .menu-icon .bar:nth-child(2) {
-        animation: barAnimation 0.5s 0.4s forwards;
-    }
-    .menu-icon .bar:nth-child(3) {
-        animation: barAnimation 0.5s 0.5s forwards;
-    }
-}
+
+
+
+
 
 
 
